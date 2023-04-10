@@ -1,0 +1,229 @@
+<div class="d-flex align-items-center justify-content-evenly flex-wrap mt-3">
+  <h1 style="font-size: 25px; font-weight: bold;">Deals</h1>
+  <div class="d-flex flex-wrap w-75">
+    <select class="form-select m-1">
+      <option selected>Segment All</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <select class="form-select m-1">
+      <option selected>Assignee All</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <select class="form-select m-1">
+      <option selected>Status All</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+    <input type="text" class="form-control m-1" name="search" [(ngModel)]="searchText" autocomplete="off"
+      placeholder="search" name="" id="">
+  </div>
+</div>
+
+
+
+<div class="d-flex align-items-center justify-content-center flex-wrap" cdkDropListGroup>
+  <div class="cardContainer">
+    <div cdkDropList [cdkDropListData]="contacts" (cdkDropListDropped)="drop($event)">
+      <div class="m-1">
+        <h5>Potential Value</h5>
+      </div>
+      <div *ngFor="let item of contacts |filter:searchText" cdkDrag class="d-flex flex-column">
+        <div *ngIf="item.status === 'Potential Value'">
+          <div class="card m-1" style="background-color: white;">
+            <div class="card-body">
+              <h6>
+                {{item.first_name}} {{item.last_name}}
+              </h6>
+              <div class="d-flex">
+                <p
+                  style="background-color:rgb(156 169 183); border-radius: 5px; margin-right: 5px;padding: 4px;color: white;">
+                  {{item.state}}
+                </p>
+                <span>
+                  {{item.probability_status}}
+                </span>
+              </div>
+              <div class="d-flex">
+                <p>
+                  {{item.company}}
+                </p>
+                :
+                <p>
+                  {{item.phone}}
+                </p>
+              </div>
+              <div>
+                {{item.date}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardContainer">
+    <div cdkDropList [cdkDropListData]="contacts" (cdkDropListDropped)="drop($event)">
+      <div class="m-1">
+        <h5>Focus</h5>
+      </div>
+      <div *ngFor="let item of contacts | filter:searchText" cdkDrag class="d-flex flex-column">
+        <div *ngIf="item.status === 'Focus'">
+          <div class="card m-1" style="background-color: white;">
+            <div class="card-body">
+              <h6>
+                {{item.first_name}} {{item.last_name}}
+              </h6>
+              <div class="d-flex">
+                <p
+                  style="background-color:rgb(156 169 183); border-radius: 5px; margin-right: 5px;padding: 4px;color: white;">
+                  {{item.state}}
+                </p>
+                <span>
+                  {{item.probability_status}}
+                </span>
+              </div>
+              <div class="d-flex">
+                <p>
+                  {{item.company}}
+                </p>
+                :
+                <p>
+                  {{item.phone}}
+                </p>
+              </div>
+              <div>
+                {{item.date}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardContainer">
+    <div cdkDropList [cdkDropListData]="contacts" (cdkDropListDropped)="drop($event)">
+      <div class="m-1">
+        <h5>Contact Made</h5>
+      </div>
+      <div *ngFor="let item of contacts |filter:searchText" cdkDrag class="d-flex flex-column">
+        <div *ngIf="item.status === 'Contact Made'">
+          <div class="card m-1" style="background-color: white;">
+            <div class="card-body">
+              <h6>
+                {{item.first_name}} {{item.last_name}}
+              </h6>
+              <div class="d-flex">
+                <p
+                  style="background-color:rgb(156 169 183); border-radius: 5px; margin-right: 5px;padding: 4px;color: white;">
+                  {{item.state}}
+                </p>
+                <span>
+                  {{item.probability_status}}
+                </span>
+              </div>
+              <div class="d-flex">
+                <p>
+                  {{item.company}}
+                </p>
+                :
+                <p>
+                  {{item.phone}}
+                </p>
+              </div>
+              <div>
+                {{item.date}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardContainer">
+    <div cdkDropList [cdkDropListData]="contacts" (cdkDropListDropped)="drop($event)">
+      <div class="m-1">
+        <h5>Offer Sent</h5>
+      </div>
+      <div *ngFor="let item of contacts |filter:searchText" cdkDrag class="d-flex flex-column">
+        <div *ngIf="item.status === 'Offer Sent'">
+          <div class="card m-1" style="background-color: white;">
+            <div class="card-body">
+              <h6>
+                {{item.first_name}} {{item.last_name}}
+              </h6>
+              <div class="d-flex">
+                <p
+                  style="background-color:rgb(156 169 183); border-radius: 5px; margin-right: 5px;padding: 4px;color: white;">
+                  {{item.state}}
+                </p>
+                <span>
+                  {{item.probability_status}}
+                </span>
+              </div>
+              <div class="d-flex">
+                <p>
+                  {{item.company}}
+                </p>
+                :
+                <p>
+                  {{item.phone}}
+                </p>
+              </div>
+              <div>
+                {{item.date}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardContainer">
+    <div cdkDropList [cdkDropListData]="contacts" (cdkDropListDropped)="drop($event)">
+      <div class="m-1">
+        <h5>Getting Ready</h5>
+      </div>
+      <div *ngFor="let item of contacts |filter:searchText" cdkDrag class="d-flex flex-column">
+        <div *ngIf="item.status === 'Getting Ready'">
+          <div class="card m-1" style="background-color: white;">
+            <div class="card-body">
+              <h6>
+                {{item.first_name}} {{item.last_name}}
+              </h6>
+              <div class="d-flex">
+                <p
+                  style="background-color:rgb(156 169 183); border-radius: 5px; margin-right: 5px;padding: 4px;color: white;">
+                  {{item.state}}
+                </p>
+                <span>
+                  {{item.probability_status}}
+                </span>
+              </div>
+              <div class="d-flex">
+                <p>
+                  {{item.company}}
+                </p>
+                :
+                <p>
+                  {{item.phone}}
+                </p>
+              </div>
+              <div>
+                {{item.date}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
